@@ -36,7 +36,7 @@ class GuatePromosController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\GuatePromos  $guatePromos
+     * @param  \App\GuatePromos  $promo
      * @return \Illuminate\Http\Response
      */
     public function show(GuatePromos $promo)
@@ -48,24 +48,24 @@ class GuatePromosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\GuatePromos  $guatePromos
+     * @param  \App\GuatePromos  $promo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, GuatePromos $guatePromos)
+    public function update(Request $request, GuatePromos $promo)
     {
-        $guatePromos->update($request->all());
-        return response([ 'promo' => new GuatePromosResource($guatePromos), 'message' => 'Retrieved successfully'], 200);
+        $promo->update($request->all());
+        return response([ 'promo' => new GuatePromosResource($promo), 'message' => 'Retrieved successfully'], 200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\GuatePromos  $guatePromos
+     * @param  \App\GuatePromos  $promo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(GuatePromos $guatePromos)
+    public function destroy(GuatePromos $promo)
     {
-        $guatePromos->delete();
+        $promo->delete();
         return response(['message' => 'Deleted']);
     }
 }
