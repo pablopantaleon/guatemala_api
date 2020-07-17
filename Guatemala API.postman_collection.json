@@ -1,0 +1,601 @@
+{
+	"info": {
+		"_postman_id": "3971522a-cae7-4039-9069-fde4c9b526bb",
+		"name": "Guatemala API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1d5010ed-e52f-4b0c-8998-2668e13124f2",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.collectionVariables.set('token', jsonData.access_token)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Pablo Reyes",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "pablo@go.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "pablo1234!",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "pablo1234!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Pablo Reyes",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "pablo@go.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "pablo1234!",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "pablo1234!",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 04:23:15 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 04:23:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.8"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"name\": \"Pablo Reyes\",\n        \"email\": \"pablo@go.com\",\n        \"updated_at\": \"2020-07-17T04:23:15.000000Z\",\n        \"created_at\": \"2020-07-17T04:23:15.000000Z\",\n        \"id\": 1\n    },\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmZhNzM2NDViYzk5MmFlYzg1ODFmM2E4MmY5MmNlNjQ0MDgyMWQ2ZTVkOGM5MjViNDFlMGZkYjgwM2Q3NTQyYTIwYjA3ZmE5MDc0MjAyYWEiLCJpYXQiOjE1OTQ5NTk3OTUsIm5iZiI6MTU5NDk1OTc5NSwiZXhwIjoxNjI2NDk1Nzk1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.LR5YoMTwFZ4STpXA_-0NIa8xz_2x6tKxWFL0X8Yt3ftEgzuxkCoP3xgXlubjB73VnV-PpOax-wAnSxPCUIUOTcRK5rcBLgSsNKzM3t2JAsdpgI7nfQZlcvzM1NdntLJepftJKFdiY_tlZWTHD3FV8STQXRjmciZKZ46sBP-PWVtRkZWzb4zdxJPVgeY2bWsCGbI8YEXPprY_COkDfRWqxzu_k9-HTIrVV7RXsD0L0Le-MOlbXC5w5rH7DKpxsSFNmvkolM1mG-GyFfRRvrQZARo6LV3cE455s-6HJRfzJj4x6VYKW630LOx-zZWSlQeBaTqCbv_pjst6EqjywPe2Eh3vp3Ms6uFem95QbTJguLqmqmCjD0xoOm_0mfSNOfxWRVORmGhl56cps53YA1gn64Ll1Uryzynq3haLdoPCaf1mmOGFD8SZY-nNT9GVgrnxvz7nhOhFUYqzUM-9yMKybE9joWZ_XbI838g2DVS-25GiqNRd7ykDNhBzNFjOTaIS_reTNIx8C7Urh6stQigXY4y4-G-7ZbbWxIWrSSz0tR-sbmpmCdgCQiKCVcktY--Al3FFHomH_GMZh7EuBk_e2VZPKuogTIM5ssOsCLH6BSXjMKOuYxzcBPlhnH0FXku7pFp61Kfl7ZwceNrqejdfwOcq-Ng3XSXqY_YqA2ybOOw\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "pablo@go.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "pablo1234!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "pablo@go.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "pablo1234!",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 04:29:27 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 04:29:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.8"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"Pablo Reyes\",\n        \"email\": \"pablo@go.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2020-07-17T04:23:15.000000Z\",\n        \"updated_at\": \"2020-07-17T04:23:15.000000Z\"\n    },\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODQ1YmFiOWQwYzI4MDMyNTVlN2Y5NWZlY2I2NmYyMWY3MzMwMDY2OGIyYTBjOTQxMTVjNDVlZjhmMTJlYmFlZDMwNTAxZWRiZjZkMDZlNzEiLCJpYXQiOjE1OTQ5NjAxNjcsIm5iZiI6MTU5NDk2MDE2NywiZXhwIjoxNjI2NDk2MTY3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.wTleRToUBupRoCiOYq19S8Omht2z6Udit2JLiDA5QF_I5nKZ1Pv3KPSm7th554IBEhDof-225KKvlVj5aJKGDI5r55q46VqkE-kGt3Ca_JSVHivYZsxgvVi-kIfi8u1mMhNnd5IPnm0gepo0FDRrBbqF0Embmxk0nN1kDkiLncJ_eodQa0LkI4agLA8vNdpEPJEwG2I9fomZMZNJq8_6uSwglOKK4mPuI-pjj7cLaQBGqMLEY046qMkhTwWw5XjPaKTfeOzfpSoIzoBLaG4T49H1UZQxghFFz0OoB7pmQ1jRSVDPnf8GnPvFwJZJp1yyhoBl-F4TJcs9grcFPg9ppAMpbTqZNKijxRB3aqYJEVkXBNZxt4GidXDZ61HLVVXGe7YrBr9WgIhz7FfBibhVe-bcbo_pkTXj4Q6YZITsPqU8LsVz5qxBhA3CdN_GTVOzg5LMjjw72MeP7xjlLmxG6_PlLwfYTDswzwZ8rO_rijzr6b8QzsUPwoj4OJD0_GKgJkmL9DHFJYLQJmhxox6OFw9pI0gY90kjdQfe6kpJ4pLmLWntwG-TAnPodwF_CH8nl7c2n-UMO3VOq1XK7L1QqR0RRQXQ8rASsz6xeXEbsk-BIAtnrZY2OeqGTp4WIBe9_apSGX9k87yOMWxX_sTJ9REDJ4BnlZ_-P707FJ50ZWQ\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Promo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "2x1 todos los sabados",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Av. siempre viva 3-91",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "25",
+							"type": "text"
+						},
+						{
+							"key": "latitude",
+							"value": "20.29302902",
+							"type": "text"
+						},
+						{
+							"key": "longitude",
+							"value": "20.93020292",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/promo",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"promo"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Promo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "2x1 todos los sabados",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Av. siempre viva 3-91",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "25",
+									"type": "text"
+								},
+								{
+									"key": "latitude",
+									"value": "20.29302902",
+									"type": "text"
+								},
+								{
+									"key": "longitude",
+									"value": "20.93020292",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/promo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"promo"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 04:48:27 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 04:48:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.8"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"promo\": {\n        \"title\": \"2x1 todos los sabados\",\n        \"address\": \"Av. siempre viva 3-91\",\n        \"price\": \"25\",\n        \"latitude\": \"20.29302902\",\n        \"longitude\": \"20.93020292\",\n        \"updated_at\": \"2020-07-17T04:48:27.000000Z\",\n        \"created_at\": \"2020-07-17T04:48:27.000000Z\",\n        \"id\": 1\n    },\n    \"message\": \"Created successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all promos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/promo",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"promo"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all promos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/promo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"promo"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 04:48:32 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jul 2020 04:48:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.8"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"2x1 todos los sabados\",\n            \"price\": \"25\",\n            \"address\": \"Av. siempre viva 3-91\",\n            \"latitude\": \"20.29302902\",\n            \"longitude\": \"20.93020292\",\n            \"created_at\": \"2020-07-17T04:48:27.000000Z\",\n            \"updated_at\": \"2020-07-17T04:48:27.000000Z\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/promo?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/promo?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"path\": \"http://127.0.0.1:8000/api/promo\",\n        \"per_page\": 10,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Promo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/promo/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"promo",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7911be46-b589-4eee-9d68-6262bdcc2cc3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "82a946a0-1167-4713-ae86-7b84350737a6",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "6155a294-2b9f-4c76-8926-68a24db896a6",
+			"key": "base_url",
+			"value": ""
+		},
+		{
+			"id": "280bc0a3-e143-4855-a3ad-aeb716763477",
+			"key": "token",
+			"value": "\"\""
+		}
+	],
+	"protocolProfileBehavior": {}
+}
