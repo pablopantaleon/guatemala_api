@@ -16,8 +16,8 @@ class GuatePromosController extends Controller
      */
     public function index()
     {
-        $promos = GuatePromos::paginate(10);        
-        return GuatePromosResource::collection($promos);
+        $promos = GuatePromos::all();
+        return response([ 'promos' => GuatePromosResource::collection($promos), 'message' => 'Retrieved successfully'], 200);
     }
 
     /**
@@ -39,9 +39,9 @@ class GuatePromosController extends Controller
      * @param  \App\GuatePromos  $guatePromos
      * @return \Illuminate\Http\Response
      */
-    public function show(GuatePromos $guatePromos)
+    public function show(GuatePromos $promo)
     {
-        return response([ 'promo' => new GuatePromosResource($guatePromos), 'message' => 'Retrieved successfully'], 200);
+        return response($promo, 200);
     }
 
     /**
