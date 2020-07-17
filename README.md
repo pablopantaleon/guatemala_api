@@ -39,5 +39,10 @@ $: composer test
 
 
 ### Postman
-Hay un archivo de postman el cual se puede importar para probar el `login, register, CRUD promos`
+El archivo de [Guatemala API Postman](https://github.com/pablopantaleon/guatemala_api/blob/master/https://github.com/pablopantaleon/guatemala_api/blob/master/Guatemala%20API.postman_collection.json) el cual se puede importar para probar el `login, register, CRUD promos`
+
+### Screenshots
+![Imagen 1](https://github.com/pablopantaleon/guatemala_api/blob/master/1.png?raw=true)
+![Imagen 2](https://github.com/pablopantaleon/guatemala_api/blob/master/2.png?raw=true)
+![Imagen 3](https://github.com/pablopantaleon/guatemala_api/blob/master/3.png?raw=true)
 
